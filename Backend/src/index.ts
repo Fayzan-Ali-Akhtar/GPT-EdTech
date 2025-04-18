@@ -29,6 +29,11 @@ app.use(cors());
 
 app.use(express.json());
 
+// Health‑check endpoint
+app.get("/", (_req, res) => {
+  res.status(200).json({ message: "API is running..." });
+});
+
 // For Student Routes
 app.use(StudentRoute, studentRouter);
 
